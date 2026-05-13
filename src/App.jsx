@@ -40,12 +40,24 @@ function App() {
 
   }
 
+  const handleDelete = async (id) => {
+
+    const response = await fetch(`http://localhost:3000/myServer/users/${id}`,
+      {
+        method: "DELETE"
+      }
+    )
+
+    setData(prev => prev.filter(p => p.id !== id))
+
+  }
+
   console.log(data)
 
 
   return (
     <>
-      <div className="container">
+      <div className="container p-3">
         <div className="row">
           <div className="col-12 d-flex justify-content-center">
             <h1>My Users!</h1>
@@ -69,6 +81,7 @@ function App() {
               <UserCard
                 name={d.name}
                 age={d.age}
+                handleDelete={() => handleDelete(d.id)}
               />
             </div>
           })}
