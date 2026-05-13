@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UserCard = ({ name, email }) => {
+const UserCard = ({ name, age }) => {
     return (
         <div className="card">
             <div className="card-body">
@@ -8,7 +8,7 @@ const UserCard = ({ name, email }) => {
                     <span className='fw-bold'>{name}</span>
                 </div>
                 <div className="card-text d-flex justify-content-center">
-                    <span>{email}</span>
+                    <span>{age}</span>
                 </div>
             </div>
         </div>
